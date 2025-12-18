@@ -1,4 +1,3 @@
-build/
 quark
+*.o
 compile_flags.txt
-tools_c.sh
