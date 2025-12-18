@@ -4,9 +4,6 @@ pkg_check_modules(SDL3_TTF REQUIRED IMPORTED_TARGET sdl3-ttf)
 
 add_executable(ladybird
 	quartz.cpp
-	engine.cpp
-	ui.cpp
-	window.cpp
 )
 
 target_link_libraries(ladybird PRIVATE

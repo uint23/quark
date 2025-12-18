@@ -324,7 +324,7 @@ public:
 			std::exit(1);
 		}
 
-		win = SDL_CreateWindow("Ladybird", 900, 650, SDL_WINDOW_RESIZABLE);
+		win = SDL_CreateWindow("quartz", 900, 650, SDL_WINDOW_RESIZABLE);
 		if (!win) {
 			warnln("window create failed: {}", SDL_GetError());
 			SDL_Quit();
