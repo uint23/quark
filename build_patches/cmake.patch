@@ -1,0 +1,15 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index afcc5bf2..e7a12776 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -69,6 +69,10 @@ if (ENABLE_QT AND ENABLE_GUI_TARGETS)
+     find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
+ endif()
+ 
++if (ENABLE_QUARTZ AND ENABLE_GUI_TARGETS)
++    include(Meta/CMake/SDL3.cmake)
++endif()
++
+ # We need to find OpenSSL in order to link it explicitly with all targets.
+ find_package(OpenSSL REQUIRED)
+ 

@@ -1,0 +1,13 @@
+diff --git a/UI/CMakeLists.txt b/UI/CMakeLists.txt
+index d02cec2d..ce8a1943 100644
+--- a/UI/CMakeLists.txt
++++ b/UI/CMakeLists.txt
+@@ -49,6 +49,8 @@ endfunction()
+ # Select UI Framework
+ if (ENABLE_QT)
+    add_subdirectory(Qt)
++elseif (ENABLE_QUARTZ)
++   add_subdirectory(quartz)
+ elseif (APPLE)
+    add_subdirectory(AppKit)
+ elseif(ANDROID)

@@ -1,0 +1,10 @@
+diff --git a/Meta/CMake/lagom_options.cmake b/Meta/CMake/lagom_options.cmake
+index cd4a0e15..fe886cd4 100644
+--- a/Meta/CMake/lagom_options.cmake
++++ b/Meta/CMake/lagom_options.cmake
+@@ -30,3 +30,5 @@ if (ANDROID OR APPLE)
+ else()
+     ladybird_option(ENABLE_QT ON CACHE BOOL "Build ladybird application using Qt GUI")
+ endif()
++
++ladybird_option(ENABLE_QUARTZ OFF CACHE BOOL "Build ladybird application using Quartz GUI")
