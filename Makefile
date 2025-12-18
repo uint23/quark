@@ -60,7 +60,7 @@ LDFLAGS = -Wl,-rpath,$(BUILD)/lib -Wl,-rpath,$(BUILD)/vcpkg_installed/x64-linux-
 SRCDIR = quartz
 SRC	= $(SRCDIR)/quartz.cpp
 OBJ	= $(SRC:.cpp=.o)
-BIN	= quartz/quartz
+BIN	= quartz.bin
 
 all: $(BIN)
 
@@ -91,9 +91,17 @@ patch:
 	ln -sf $(ROOT)/quartz $(LADYBIRD)/UI/quartz
 
 ladybird:
+	# cd $(LADYBIRD) && \
+	# cmake --preset Release -DENABLE_QT=OFF -DENABLE_QUARTZ=ON && \
+	# ninja -C Build/release
 	cd $(LADYBIRD) && \
-	cmake --preset Release -DENABLE_QT=OFF -DENABLE_QUARTZ=ON && \
+	CC=clang CXX=clang++ \
+	cmake --preset Release \
+		-DENABLE_QT=OFF \
+		-DENABLE_QUARTZ=ON \
+		-DBUILD_TESTING=OFF && \
 	ninja -C Build/release
+
 
 clangd:
 	rm -f compile_flags.txt
